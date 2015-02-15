@@ -1,0 +1,476 @@
+.note {
+	position: absolute;
+	z-index: 96;
+	border-radius: 5px;
+	color: #444;
+	color: rgba(0,0,0,0.45);
+	text-indent: 1px;
+	cursor: pointer;
+    border: 2px solid transparent;
+}
+
+#bottom_left {
+    width: 100px;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    bottom: 74px;
+    background-color: #ddd;
+    border-top: 1px solid #333;
+    z-index: 99;
+    color: #333;
+}
+#keyboard_icon {
+    width: 100%;
+    height: 16px;
+    background-image:url(/app/keyboard.png);
+    background-position: 4px;
+    position: relative;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+#keyboard_options {
+    width: 100px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.65);
+    color: white;
+    position: absolute;
+    left: 50px;
+    bottom: 16px;
+    padding: 10px;
+    display: none;
+}
+.selected {
+    border-color: white;
+}
+
+.key, .key_sharp{
+	font-size: 11px;
+	font-family: Arial, sans-serif;
+	width: 96px;
+	text-align: right;
+	background-color: white;
+	color: black;
+	padding-right: 4px;
+	z-index: 5;
+    cursor: pointer;
+}
+.key_sharp {
+	color: white;
+	background-color: black;
+}
+
+
+.key:hover {
+    background-color: #eaeaea;
+}
+.key:active {
+    background-color: #eee;
+}
+.key_sharp:hover {
+    background-color: #1b1b1b;
+}
+
+.sequencer_key:hover {
+    border-top: 1px solid #80808b;
+    border-bottom: 1px solid #80808b;
+    height: 14px;
+}
+.key div, .key_sharp div {
+    width: 100%;
+    opacity: 0.7;
+    position: absolute;
+    z-index: 1;
+}
+.key_text {
+    opacity: 1 !important;
+    z-index: 0 !important;
+    width: 95px !important;
+}
+.sequencer_key {
+	width: 100%;
+	z-index: 0;
+    height: 16px;
+}
+.sequencer_key.highlight, .sequencer_key.highlight {
+	background-image: url('/app/row_highlight.png');
+}
+body, #sequencer input
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", "Lucida", Arial, sans-serif;
+	font-size:11px;
+    overflow: hidden;
+}
+body a {
+	color: #A0C5FA;
+}
+#sequencer input {
+	background-color: #ccc;
+	height: 20px;
+	line-height: 20px;
+}
+#keyboard_wrapper_element {
+	float: left;
+	width: 100px;
+	position: absolute;
+    top: 23px;
+    bottom: 74px;
+	overflow: hidden;
+}
+#keyboard_element{
+	width: 100px;
+	position: absolute;
+	top: -40px;
+    overflow: hidden;
+}
+#sequencer {
+	width: 100%;
+	height: 100%;
+    overflow: hidden;
+    background-color: #333;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#toolbar_element {
+    height: 25px;
+    line-height: 20px;
+    background-color: #ddd;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding-left: 5px;
+    color: black;
+    z-index: 97;
+    box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.75);
+}
+#sequencer_main {
+	position: absolute;
+	overflow: scroll;
+    top: 25px;
+    bottom: 74px;
+	left: 100px;
+    right: 0;
+    outline: none;
+    z-index: 96;
+}
+#playbutton {
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.3) url('/app/playbutton.png');
+    background-position: center;
+    background-repeat: no-repeat;
+	z-index: 98;
+    display: none;
+}
+#loading_overlay {
+	width: 100%;
+	height: 100%;
+	cursor: progress;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.6) url('/app/loading.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+	z-index: 99;
+}
+#captcha_container {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.3);
+	z-index: 98;
+	display: none;
+}
+#captcha_container iframe {
+    border: 0;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    margin-top: -165px;
+    left: 50%;
+    margin-left: -165px;
+}
+#sequencer_inner {
+	width: 500px;
+	position: relative;
+	overflow: hidden;
+}
+#sequencer_background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #4b4b4b;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+#sequencer_keyboard_wrapper
+{
+
+}
+#sequencer_keyboard {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 0;
+}
+.instrument0 {
+	background-color: #1B9EE0;
+}
+.instrument1 {
+	background-color: orange;
+}
+.instrument2 {
+	background-color: #991414;
+}
+.instrument3 {
+	background-color: #cc2bc6;
+}
+.instrument4 {
+	background-color: #36cc2b;
+}
+.instrument5 {
+	background-color: #121212;
+	color: #eee;
+}
+.instrument6 {
+	background-color: #512bcc;
+}
+.instrument7{
+    background-color: #a8cc2b;
+}
+.instrument8 {
+    background-color: #156cb0;
+}
+.instrument9{
+    background-color: #746b00;
+}
+.instrument10 {
+    background-color: #ffea00;
+}
+.instrument11{
+    background-color: #91692a;
+}
+.instrument12 {
+    background-color: #4d3716;
+    color: white;
+}
+.playhead {
+	width: 1px;
+	height: 100%;
+	background-color: #0A69F2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display:none;
+}
+#play_small {
+	width: 20px;
+	height: 20px;
+    float: left;
+	cursor: pointer;
+	display: inline-block;
+    vertical-align: top;
+    margin-top: 2px;
+	background-image:url('/app/play.gif');
+    background-repeat: no-repeat;
+    background-position:top;
+}
+#share, #savelink {
+    float: left;
+}
+#savelink {
+    margin-left: 5px;
+    font-weight: bold;
+}
+#channelslink {
+    float: left;
+    position: relative;
+    font-weight: bold;
+}
+#bottom {
+	width: 100%;
+	height: 73px;
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #222;
+	background-image: url('/app/gradient.png');
+	background-repeat: repeat-x;
+    border-top: 1px solid #333;
+    color: white;
+}
+#links {
+	line-height: 16px;
+	padding-left: 4px;
+	width: 100%;
+	height: 45px;
+	position: absolute;
+	left: 0;
+	top: 25px;
+}
+#menus {
+	width: 100%;
+    height: 22px;
+    line-height: 22px;
+	position: absolute;
+    bottom: 50px;
+    border-bottom: 1px solid #ddd;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+#menus select {
+    width: 100px;
+    font-size: 12px;
+}
+#menus div {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+#loading_container {
+	position: absolute;
+	left: 140px;
+	top: 40px;
+	width: 100px;
+	height: 20px;
+	background-color: #242424;
+    border: 1px solid orange;
+	z-index: 99;
+}
+#loading {
+	background-color: orange;
+	height: 100%;
+	width: 0%;
+}
+
+#toolbar_element a {
+    color: #2F3BC2;
+}
+.btn, div.active{
+	width: 18px;
+	height: 18px;
+	background-position: center;
+	background-repeat: no-repeat;
+	border: 1px solid transparent;
+    float: left;
+    cursor: pointer;
+	margin-right: 5px;
+}
+.btn:hover {
+	border-color: #ffa500;
+}
+.active {
+	border-color: #ffa500;
+    background-color: #bbb;
+}
+.spacer {
+    width: 8px;
+    border-right: 1px solid #666;
+    margin-right: 7px;
+    height: 14px;
+    margin-top: 3px;
+    float: left;
+}
+#mode_draw {
+	 background-image: url("/app/draw.png");
+}
+#mode_edit {
+	 background-image: url("/app/cursor.png");
+}
+#mode_erase {
+	background-image: url("/app/delete.png");
+}
+#mode_play{
+	background-image: url("/app/sound.png");
+}
+#btn_cut {
+    background-image:url('/app/cut.png');
+}
+#btn_copy {
+    background-image:url('/app/copy.png');
+}
+#btn_paste {
+    background-image:url('/app/paste.png');
+}
+#btn_selectall{
+    background-image:url('/app/selectall.png');
+}
+#btn_zoomIn{
+    background-image:url('/app/zoomin.png');
+}
+#btn_zoomOut{
+    background-image:url('/app/zoomout.png');
+}
+#selection_rect{
+    z-index: 100;
+    border: 1px solid #333;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height; 0;
+}
+
+.box_label {
+    background-color: #242424;
+    color: white;
+    display: inline-block;
+    margin-top: 0;
+    height: 20px;
+    float: left;
+    padding-left: 2px;
+    margin-left: 5px;
+}
+.box_input {
+    display: inline-block;
+	border: 1px solid black;
+    height: 18px !important;
+}
+.box_input input {
+    border: 0;
+    background-image: none;
+    color: black;
+    background-color: #ccc;
+    margin: 0;
+    height: 16px;
+}
+#message_wrapper {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    height: 0;
+    z-index: 100;
+    text-align: center;
+    display: none;
+    color: white;
+}
+#message_text {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 24px;
+    cursor: default;
+}
+#channels {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    background-color: #ddd;
+    width: 200px;
+    height: 100px;
+    padding: 5px;
+    box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.75);
+}
