@@ -4,7 +4,7 @@ if(!defined('NOT_IN_FORUM'))
 	define('NOT_IN_FORUM', 1);
 	require_once('../inc/init.php');
 	
-	include($GLOBALS['templates_path'].'/'.$GLOBALS['config']['template'].'/main.php');
+	include($GLOBALS['templates_path'].'/'.$GLOBALS['settings']['template'].'/main.php');
 	echo '<link rel="stylesheet" href="/resources/style.css"/>';
 }
 global $settings, $cname;
